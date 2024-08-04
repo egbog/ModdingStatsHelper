@@ -9,6 +9,7 @@ using EFT.UI.DragAndDrop;
 using System;
 using System.Linq;
 using EFT.UI.WeaponModding;
+using UnityEngine;
 
 namespace ShowMeTheStats
 {
@@ -37,7 +38,7 @@ namespace ShowMeTheStats
 
         protected override MethodBase GetTargetMethod()
         {
-            return typeof(SimpleTooltip).GetMethod("Show", BindingFlags.Instance | BindingFlags.Public);
+            return typeof(SimpleTooltip).GetMethod("Show", BindingFlags.Instance | BindingFlags.Public, null, new Type[] { typeof(string), typeof(Vector2), typeof(float), typeof(float), typeof(bool) }, null);
         }
 
         [PatchPrefix]
